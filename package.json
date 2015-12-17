@@ -1,7 +1,7 @@
 {
   "name": "react-transform-boilerplate",
   "version": "1.0.0",
-  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+  "description": "A boilerplate for koa React Babel webpack project with hot reloading React components.",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
