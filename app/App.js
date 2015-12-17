@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
 import { NICE, SUPER_NICE } from './colors';
 
@@ -8,14 +9,14 @@ class Counter extends Component {
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   tick() {
     this.setState({
       counter: this.state.counter + this.props.increment
     });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {

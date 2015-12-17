@@ -1,15 +1,14 @@
 require('babel-core/register');
 
-var path = require('path');
-var koa = require('koa');
-var route = require('koa-route');
-var views = require('co-views');
+const koa = require('koa');
+const route = require('koa-route');
+const views = require('co-views');
 
-var webpack = require('webpack');
-var config = require('../webpack/webpack.config.dev');
+const webpack = require('webpack');
+const config = require('../webpack/webpack.config.dev');
 
-var app = koa();
-var compiler = webpack(config);
+const app = koa();
+const compiler = webpack(config);
 
 app.use(require('koa-webpack-dev-middleware')(compiler, {
   noInfo: true,
@@ -32,5 +31,5 @@ app.use(route.get('*', function *() {
 }));
 
 app.listen(3000, 'localhost', function () {
-    console.log('Listening at http://localhost:3000');
+  console.log('Listening at http://localhost:3000');
 });

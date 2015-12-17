@@ -12,7 +12,9 @@
   "rules": {
     "comma-dangle": 0,
     "no-console": 0,
-    "id-length": 0
+    "id-length": 0,
+    "func-names": 0,
+    "react/prop-types": 0
   },
   "plugins": [
     "babel",
