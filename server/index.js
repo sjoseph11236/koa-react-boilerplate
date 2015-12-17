@@ -1,27 +1,36 @@
+require('babel-core/register');
+
 var path = require('path');
-var express = require('express');
+var koa = require('koa');
+var route = require('koa-route');
+var views = require('co-views');
+
 var webpack = require('webpack');
 var config = require('../webpack/webpack.config.dev');
 
-var app = express();
+var app = koa();
 var compiler = webpack(config);
 
-app.use(require('webpack-dev-middleware')(compiler, {
+app.use(require('koa-webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
 }));
 
-app.use(require('webpack-hot-middleware')(compiler));
+app.use(require('koa-webpack-hot-middleware')(compiler));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../index.html'));
+app.use(function *(next) {
+  this.render = views(__dirname + '/views', {
+    map: { jade: 'jade' },
+    default: 'jade'
+  });
+
+  yield next;
 });
 
-app.listen(3000, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+app.use(route.get('*', function *() {
+  this.body = yield this.render('index');
+}));
 
-  console.log('Listening at http://localhost:3000');
+app.listen(3000, 'localhost', function () {
+    console.log('Listening at http://localhost:3000');
 });

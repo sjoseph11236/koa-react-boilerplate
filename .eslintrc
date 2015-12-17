@@ -8,6 +8,7 @@
     "node": true
   },
   "parser": "babel-eslint",
+  "extends": "eslint-config-airbnb",
   "rules": {
     "quotes": [2, "single"],
     "strict": [2, "never"],
