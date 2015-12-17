@@ -1,6 +1,6 @@
 {
-  "name": "react-transform-boilerplate",
-  "version": "1.0.0",
+  "name": "koa-react-boilerplate",
+  "version": "0.0.0",
   "description": "A boilerplate for koa React Babel webpack project with hot reloading React components.",
   "scripts": {
     "clean": "rimraf dist",
@@ -11,11 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+    "url": "https://github.com/yuezk/koa-react-boilerplate.git"
   },
   "keywords": [
+    "koa",
     "react",
     "reactjs",
+    "babel",
     "boilerplate",
     "hot",
     "reload",
@@ -26,12 +28,12 @@
     "babel",
     "react-transform"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Kevin Yue <yuezk001@gmail.com> (https://github.com/yuezk)",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/gaearon/react-transform-boilerplate/issues"
+    "url": "https://github.com/yuezk/koa-react-boilerplate/issues"
   },
-  "homepage": "https://github.com/gaearon/react-transform-boilerplate",
+  "homepage": "https://github.com/yuezk/koa-react-boilerplate",
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta4",
     "babel-loader": "^6.2.0",
@@ -54,10 +56,8 @@
     "babel-core": "^6.3.15",
     "co-views": "^2.1.0",
     "jade": "^1.11.0",
-    "kerberos": "0.0.17",
     "koa": "^1.1.2",
     "koa-route": "^2.4.2",
-    "mongoose": "^4.3.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "webpack": "^1.12.9"
