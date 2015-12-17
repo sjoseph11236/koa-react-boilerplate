@@ -1,4 +1,4 @@
-# React Transform Boilerplate
+# Koa React Boilerplate
 
 > A boilerplate for koa React Babel webpack project with hot reloading React components.
 
@@ -7,7 +7,7 @@
 ## Usage
 
 ```
-git clone this_repo
+git clone https://github.com/yuezk/koa-react-boilerplate.git
 cd <your folder>
 npm i
 npm start
